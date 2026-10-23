@@ -77,10 +77,11 @@ function Hero() {
         </div>
 
         <div className="flex justify-center">
-          <motion.img
-            src="/mayur.jpg"
+          <img
+            src={`${import.meta.env.BASE_URL}mayur-ai.png`}
             alt="Mayur Gowda"
             className="w-[350px] h-[350px] rounded-full object-cover border-4 border-cyan-400"
+            onError={(e) => console.error("Profile image failed:", e.currentTarget.src)}
             animate={{
               y: [0, -15, 0],
             }}
@@ -89,6 +90,7 @@ function Hero() {
               repeat: Infinity,
             }}
           />
+          
         </div>
       </div>
     </section>
